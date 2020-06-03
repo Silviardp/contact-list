@@ -10,6 +10,7 @@ const ContactCard = () => {
       <div className="user-details">
         <p>Name: Jenny Han</p>
         <p>Email: Jenny.Han@notreal.com</p>
+        <button onClick={() => setShowAge(!showAge)}>Toggle Age</button>
         {showAge === true ? <p>Age: 25</p> : null}
       </div>
     </div>
