@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import "../styles.css";
 
-const ContactCard = () => {
+const ContactCard = (props) => {
   const [showAge, setShowAge] = useState(false);
 
   return (
     <div className="contact-card">
-      <img src="https://via.placeholder.com/150" alt="profile" />
+      <img src={props.avatar} alt="profile" />
       <div className="user-details">
-        <p>Name: Jenny Han</p>
-        <p>Email: Jenny.Han@notreal.com</p>
+        <p>Name: {props.name}</p>
+        <p>Email: {props.email}</p>
         <button onClick={() => setShowAge(!showAge)}>Toggle Age</button>
-        {showAge === true ? <p>Age: 25</p> : null}
+        {showAge === true ? <p>{props.age}</p> : null}
       </div>
     </div>
   );
