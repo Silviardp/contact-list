@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ContactCard from "./components/ContactCard";
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
 
-  fetch("https://randomuser.me/api/?results=3")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      setContacts(data.results);
-    });
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?results=3")
+      .then((response) => response.json())
+      .then((data) => {
+        setContacts(data.results);
+      });
+  }, []);
 
   return (
     <div>
